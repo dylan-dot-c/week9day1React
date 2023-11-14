@@ -1,3 +1,5 @@
+import TodoCard from "./TodoCard";
+
 interface TaskProps {
     tasks: string[];
 }
@@ -5,15 +7,13 @@ interface TaskProps {
 // type PropType
 function Tasks({ tasks }: TaskProps) {
     return (
-        <div className='p-3 rounded-3 bg-warning shadow w-50 mx-auto mt-3'>
-            <h2>My Tasks</h2>
-            <ul>
+        <div className='p-3 rounded-3 shadow row mx-auto mt-3 bg-warning '>
+            <h2 className='text-center mb-4'>My Tasks</h2>
+            <div className='row gap-3 justify-content-between '>
                 {tasks.map((task, index) => (
-                    <li className='fs-4' key={index}>
-                        {task}
-                    </li>
+                    <TodoCard task={task} />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
