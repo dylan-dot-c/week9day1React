@@ -4,10 +4,11 @@ import TaskType from "../types/task";
 interface TaskProps {
     tasks: TaskType[];
     handleDelete: (id: string) => void;
+    handleEdit: (id: string) => void;
 }
 
 // type PropType
-function Tasks({ tasks, handleDelete }: TaskProps) {
+function Tasks({ tasks, handleDelete, handleEdit }: TaskProps) {
     return (
         <div className='p-3 rounded-3 shadow row mx-auto mt-3 bg-warning '>
             <h2 className='text-center mb-4'>My Tasks</h2>
@@ -17,6 +18,7 @@ function Tasks({ tasks, handleDelete }: TaskProps) {
                         key={index}
                         task={task}
                         handleDelete={handleDelete}
+                        handleEdit={handleEdit}
                     />
                 ))}
             </div>
